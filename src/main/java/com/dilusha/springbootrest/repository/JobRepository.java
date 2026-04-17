@@ -1,6 +1,6 @@
-package com.dilusha.jobapp.repository;
+package com.dilusha.springbootrest.repository;
 
-import com.dilusha.jobapp.model.JobPost;
+import com.dilusha.springbootrest.model.JobPost;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
