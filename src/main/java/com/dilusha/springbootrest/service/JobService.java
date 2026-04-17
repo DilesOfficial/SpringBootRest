@@ -1,8 +1,7 @@
-package com.dilusha.jobapp.service;
+package com.dilusha.springbootrest.service;
 
-import com.dilusha.jobapp.model.JobPost;
-import com.dilusha.jobapp.repository.JobRepository;
-import lombok.AllArgsConstructor;
+import com.dilusha.springbootrest.model.JobPost;
+import com.dilusha.springbootrest.repository.JobRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

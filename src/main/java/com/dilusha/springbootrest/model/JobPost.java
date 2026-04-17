@@ -1,4 +1,4 @@
-package com.dilusha.jobapp.model;
+package com.dilusha.springbootrest.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
