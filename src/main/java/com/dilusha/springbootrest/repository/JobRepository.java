@@ -2,6 +2,7 @@ package com.dilusha.springbootrest.repository;
 
 import com.dilusha.springbootrest.model.JobPost;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
