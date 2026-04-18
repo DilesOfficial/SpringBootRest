@@ -59,4 +59,8 @@ public class JobService {
         ));
         repository.saveAll(jobs);
     }
+
+    public List<JobPost> search(String keyword) {
+        return repository.findByPostProfileContainingOrPostDescContaining(keyword, keyword);
+    }
 }
