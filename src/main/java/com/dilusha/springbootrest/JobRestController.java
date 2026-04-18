@@ -3,7 +3,6 @@ package com.dilusha.springbootrest;
 import com.dilusha.springbootrest.model.JobPost;
 import com.dilusha.springbootrest.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,33 +12,39 @@ import java.util.List;
 public class JobRestController {
 
     @Autowired
-    private JobService jobService;
+    private JobService service;
 
     @GetMapping("jobPosts")
     public List<JobPost> getAllJobs() {
-        return jobService.getAllJobs();
+        return service.getAllJobs();
     }
 
     @GetMapping("jobPost/{postID}")
     public JobPost getJob(@PathVariable("postID") int postId) {
-        return jobService.getJob(postId);
+        return service.getJob(postId);
     }
 
     @PostMapping("jobPost")
     public JobPost addJob(@RequestBody JobPost jobPost) {
-        jobService.addJob(jobPost);
-        return jobService.getJob(jobPost.getPostId());
+        service.addJob(jobPost);
+        return service.getJob(jobPost.getPostId());
     }
 
     @PutMapping("jobPost")
     public JobPost updateJob(@RequestBody JobPost jobPost) {
-        jobService.updateJob(jobPost);
-        return jobService.getJob(jobPost.getPostId());
+        service.updateJob(jobPost);
+        return service.getJob(jobPost.getPostId());
     }
 
     @DeleteMapping("jobPost/{postID}")
     public String deleteJob(@PathVariable int postID) {
-        jobService.deleteJob(postID);
+        service.deleteJob(postID);
         return "Job Deleted Successfully";
+    }
+
+    @GetMapping("load")
+    public String loadData(){
+        service.load();
+        return "Loading Success";
     }
 }
